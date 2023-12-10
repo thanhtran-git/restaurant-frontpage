@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(0, 0%, 12%);
+  color: hsl(0, 0%, 100%);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 675px) {
+  .container-nav {
+    flex-direction: column;
+  }
+  header {
+    text-align: center;
+  }
+}
+
+h1 {
+  font-family: "Poiret One", serif;
+  font-size: 3rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+}
+
+header {
+  background: rgb(139, 48, 48);
+  padding: 2em 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 1.7em 0 1em 2em;
+}
+
+nav a {
+  text-decoration: none;
+  color: aliceblue;
+  padding: 0.25em 0;
+}
+
+nav a:hover,
+nav a:focus {
+  border-bottom: 1px solid rgb(255, 170, 43);
+}
+
+.current-page {
+  border-bottom: 1.5px solid white;
+}
+
+.current-page:hover {
+  color: white;
+}
+
+.intro-text {
+  text-align: center;
+  max-width: 900px;
+  margin-inline: auto;
+  opacity: 0.6;
+  line-height: 2.25;
+  margin-top: 50px;
+}
+
+.main-part {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 1000px;
+  margin-top: 100px;
+  margin-left: 15%;
+}
+
+.img-box {
+  height: 800px;
+  width: 800px;
+  overflow: hidden;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content-box {
+  padding-inline: 10em;
+}
+
+.title {
+  font-size: 4rem;
+  max-width: max-content;
+  margin-block-end: 0.25rem;
+}
+
+.text {
+  opacity: 0.6;
+  line-height: 2.25;
+}
+
+footer {
+  background-color: rgb(139, 48, 48);
+}
+
+[data-reveal="left"] {
+  clip-path: inset(0 100% 0 0);
+}
+
+[data-reveal="left"].revealed {
+  animation: reveal-left 1.5s cubic-bezier(0.17, 0.97, 0.38, 1) forwards 300ms;
+}
+
+@keyframes reveal-left {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+[data-reveal="right"] {
+  clip-path: inset(0 0 0 100%);
+}
+[data-reveal="right"].revealed {
+  animation: reveal-right 2s cubic-bezier(0.17, 0.97, 0.38, 1) forwards 300ms;
+}
+
+@keyframes reveal-right {
+  0% {
+    clip-path: inset(0 0 0 100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+img-box .img {
+  transform: scale(1.5);
+  transition: (0.17, 0.97, 0.38, 1);
+}
+
+.img-box.revealed .img {
+  transform: scale(1);
+}
